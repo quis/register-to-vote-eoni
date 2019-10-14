@@ -1,0 +1,7 @@
+---
+applications:
+- name: register-to-vote-eoni
+  memory: 64M
+  path: ./
+  buildpack: nodejs_buildpack
+  instances: 2
