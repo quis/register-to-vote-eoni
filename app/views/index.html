@@ -1,44 +1,140 @@
-
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  GOV.UK Prototype Kit
+  Start page example
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="https://www.gov.uk">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="#">Citizenship and living in the UK</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="#">Voting</a>
+      </li>
+    </ol>
+  </div>
 {% endblock %}
 
 {% block content %}
-
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+
       <h1 class="govuk-heading-xl">
-        The GOV.UK Prototype Kit
-        <span class="govuk-caption-xl">{{releaseVersion}}</span>
-      </h1>{{releaseVersion | log }}
-      <p>
-        This kit lets you rapidly create HTML prototypes of GOV.UK services.
-      </p>
+        {% if serviceName %} {{ serviceName }} {% endif %}
+      </h1>
 
-      <p>
-        It contains all you need to prototype anything from simple static pages to complex, data-driven transactions.
-      </p>
+      <div class="get-started-intro __web-inspector-hide-shortcut__">
+<p>Use this service to apply to register to vote.</p>
 
-      <h2 class="govuk-heading-m">About this page</h2>
+<p>You need to be on the electoral register to vote in elections and referendums.</p>
 
-      <p>We recommend you add links to your prototype to this page, rather than delete it.
-        You'll find this page in the kit at '/app/views/index.html'.</p>
-
-      <p>You can change the service name by editing the file '/app/config.js'.</p>
-
-      <h2 class="govuk-heading-m">Examples and documentation</h2>
-
-      <ul class="govuk-list govuk-list--bullet">
-        <li><a href="/docs/tutorials-and-examples">Example pages and documentation</a></li>
-        <li>
-          <a href="https://design-system.service.gov.uk">
-            GOV.UK Design System
-          </a>
-        </li>
-      </ul>
-    </div>
+<div role="note" aria-label="Information" class="application-notice info-notice">
+<p>This service is also available <a href="/cofrestru-i-bleidleisio">in Welsh (Cymraeg)</a>.</p>
 </div>
 
+<p>You only need to register once - you do not need to register separately for every election.</p>
+
+<p>You must register again if you’ve changed address, name or nationality.</p>
+
+<p>You can also use this service to:</p>
+
+<ul class="govuk-list govuk-list--bullet">
+  <li>change the way you vote - for example in person, by post or by proxy</li>
+  <li>get on or off the <a href="/electoral-register">open register</a>
+</li>
+</ul>
+
+<p>It usually takes about 5 minutes.</p>
+
+<h2 id="what-youll-need" class="govuk-heading-m">What you’ll need</h2>
+
+<p>You may need the following, if you have them:</p>
+
+<ul class="govuk-list govuk-list--bullet">
+  <li>your National Insurance number</li>
+  <li>your passport if you’re a British citizen living abroad, and want to vote in England, Scotland or Wales</li>
+</ul>
+
+<div role="note" aria-label="Information" class="application-notice info-notice">
+<p>There’s a different process to <a rel="external" href="https://www.yourvotematters.co.uk/register-to-vote/register-to-vote-anonymously">register anonymously</a>, for example if you’re concerned about your safety.</p>
+</div>
+
+</div>
+
+      <a href="/where-do-you-live" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"  data-module="govuk-button">
+        Start now
+        <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" role="presentation" focusable="false">
+          <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
+        </svg>
+      </a>
+
+
+      <section class="more">
+              <div id="before-you-start">
+          <h2 class="govuk-heading-m">Before you start</h2>
+          <p>You can also <a href="/government/publications/voter-registration-forms-paper-versions">register by post</a>. There’s a different form for <a rel="external" href="http://www.eoni.org.uk/Register-To-Vote/Register-to-vote-change-address-change-name">registering by post in Northern Ireland</a>.</p>
+
+      <p>If you need help registering, contact your <a href="/get-on-electoral-register">Electoral Registration Office</a>.</p>
+
+      <p>There is an <a href="/government/publications/registering-to-vote-easy-read-guide">easy read guide about registering to vote</a> for people with a learning disability.</p>
+
+      <p>You cannot register to vote if you’re in the UK illegally.</p>
+
+      <h2 id="public-servants-posted-overseas" class="govuk-heading-m">Public servants posted overseas</h2>
+
+      <p>There are separate registration services for public servants who are likely to be posted overseas:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+      <a href="/register-to-vote-crown-servants-british-council-employees">Crown servants</a> (for example members of the diplomatic service or overseas civil service)</li>
+        <li><a href="/register-to-vote-crown-servants-british-council-employees">British Council employees</a></li>
+        <li><a href="/register-to-vote-armed-forces">armed forces</a></li>
+      </ul>
+
+      <p>You should also use these registration services if you’re the spouse or civil partner of a public servant posted overseas.</p>
+
+      <p>You can still <a rel="external" href="https://www.registertovote.service.gov.uk/register-to-vote/start">register as a non-service voter</a> if you’re in the armed forces and have a permanent home address in the UK.</p>
+
+        </div>
+
+
+
+        </section>
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Related content
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a href="#">
+                The electoral register and the ‘open register’
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Ways of voting
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+  </div>
 {% endblock %}

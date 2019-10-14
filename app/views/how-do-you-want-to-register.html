@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/where-do-you-live">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" method="post">
+
+        {{ govukRadios({
+          idPrefix: "how-do-you-want-to-register",
+          name: "how-do-you-want-to-register",
+          fieldset: {
+            legend: {
+              text: "How do you want to register?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          items: [
+            {
+              value: "british",
+              text: "As a British citizen"
+            },
+            {
+              value: "irish",
+              text: "As an Irish citizen",
+              hint: {html: "<p class='govuk-body govuk-!-margin-top-3' style='color: #6f777b'>You can only register to vote as an Irish citizen if you:</p><ul class='govuk-list govuk-list--bullet govuk-!-margin-bottom-0' style='color: #6f777b'><li>were born in Northern Ireland</li><li>qualify as a British citizen (even if you don’t identify as one)</li><li>have not lived somewhere else in the UK since you left Northern&nbsp;Ireland</li></ul>"}
+            }
+          ]
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
