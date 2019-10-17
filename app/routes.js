@@ -29,4 +29,26 @@ router.post('/how-do-you-want-to-register', function (req, res) {
 })
 
 
+router.post('/uk-live-previous', function (req, res) {
+
+  let ukLivePrevious = req.session.data['uk-live-previous']
+
+  res.redirect('/overseas-british?ukLivePrevious=' + ukLivePrevious)
+
+})
+
+router.get('/overseas-british', function (req, res) {
+
+  let ukLivePrevious = req.query.ukLivePrevious
+
+  res.render(
+    'overseas-british.html',
+    {
+      ukLivePrevious: ukLivePrevious
+    }
+  )
+
+})
+
+
 module.exports = router
