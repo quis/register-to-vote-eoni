@@ -20,7 +20,11 @@ router.post('/how-do-you-want-to-register', function (req, res) {
 
   let howDoYouWantToRegister = req.session.data['how-do-you-want-to-register']
 
-  res.redirect('/overseas-' + howDoYouWantToRegister)
+  if (howDoYouWantToRegister === 'irish') {
+    res.redirect('/overseas-irish')
+  } else {
+    res.redirect('/uk-live-previous')
+  }
 
 })
 
